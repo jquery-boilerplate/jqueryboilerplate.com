@@ -31,7 +31,7 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 
-html { font-size: 100%; overflow-y: scroll; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+html { font-size: 100%; /*overflow-y: scroll;*/ -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 
@@ -43,8 +43,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
  * Also: hot pink!
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #fff; color: #395e87; text-shadow: none; }
+::selection { background: #fff; color: #395e87; text-shadow: none; }
 
 
 /* =============================================================================
@@ -208,22 +208,66 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* =============================================================================
    Primary styles
-   Author: 
+   Author: Zeno Rocha
    ========================================================================== */
 
+html, body { 
+  height:100%;
+  background: none;
+}
 
+#container {
+  width: 100%;
+  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #395e87;
+  -moz-box-shadow: inset 0px 0px 250px #000000;
+  -webkit-box-shadow: inset 0px 0px 250px #000000;
+  -o-box-shadow: inset 0px 0px 250px #000000;
+  box-shadow: inset 0px 0px 250px #000000;
+}
 
+h1 {
+  margin: 20px 0 0 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  text-align: center;
+  font-size: 120px;
+}
 
+h1 a {
+  color: #fff;
+  text-shadow: 5px 3px 0px #4A8BA0;
+  text-decoration: none;
+}
 
+h2 {
+  /*display: none;*/
+  /*color: #1d4168;*/
+  color: #1d4168;
+  /*text-shadow: #255486 3px 3px 5px;*/
+  text-shadow: 0px 1px 0px #5487bf;
+  /*text-shadow: 0px 2px 3px #5487bf;*/
+  /*text-shadow: 0px 2px 3px #255486;*/
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin: 0 0 0 0;
+  /*text-shadow: #2c2c2c 3px 3px 5px;
+  text-shadow: 0px 1px 0px #153252;*/
+}
 
+#bola {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 110px;
+}
 
-
-
-
-
-
-
-
+header {
+  width: 960px;
+  height: 500px;
+  margin: 0 auto;
+}
 
 
 /* =============================================================================
