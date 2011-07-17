@@ -31,7 +31,7 @@ audio[controls], canvas, video { display: inline-block; *display: inline; *zoom:
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 
-html { font-size: 100%; /*overflow-y: scroll;*/ -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+/*html { font-size: 100%; overflow-y: scroll; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }*/
 
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 
@@ -51,8 +51,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
    Links
    ========================================================================== */
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
+a { color: #4A8BA0; }
+a:visited { color: #4A8BA0; }
 a:focus { outline: thin dotted; }
 
 /* Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test */
@@ -76,9 +76,6 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin:
 ins { background: #ff9; color: #000; text-decoration: none; }
 
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
-
-/* Redeclare monospace font family: en.wikipedia.org/wiki/User:Davidgothberg/Test59 */
-pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
 
 /* Improve readability of pre-formatted text in all browsers */
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
@@ -211,22 +208,106 @@ table { border-collapse: collapse; border-spacing: 0; }
    Author: Zeno Rocha
    ========================================================================== */
 
-html, body { 
+html { 
   height:100%;
-  background: none;
+  
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #395e87;
 }
 
 #container {
   width: 100%;
-  height:100%;
   position: absolute;
   top: 0;
   left: 0;
-  background: #395e87;
   -moz-box-shadow: inset 0px 0px 250px #000000;
   -webkit-box-shadow: inset 0px 0px 250px #000000;
   -o-box-shadow: inset 0px 0px 250px #000000;
   box-shadow: inset 0px 0px 250px #000000;
+}
+
+/* --- Structure --- */
+
+header {
+  width: 960px;
+  /*height: 300px;*/
+  margin: 0 auto;
+}
+
+section {
+  width: 960px;
+  /*height: 300px;*/
+  margin: 0 auto;
+}
+
+footer {
+	width: 960px;
+	padding: 0 0 30px 0;
+	margin: 0 auto;
+}
+
+hr {
+	width: 960px;
+	margin: 0 auto;
+	margin: 10px 0 5px 0;
+}
+
+h3 {
+	color: #fff;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 36px;
+	margin: 0 0 0 0;
+}
+
+.profile {
+	margin: 10px 0 40px 0;
+	width: 200px;
+	float: left;
+	text-align: left;
+}
+
+.profile img {
+	vertical-align: top;
+	float: left;
+    border: 1px solid #fff;
+}
+
+.profile a {
+	float: left;
+	text-align: left;
+	color: #fff;
+	font-family: 'Maven Pro', cursive;
+	font-size: 16px;
+	text-decoration: none;
+	margin: 0 0 0 10px;
+}
+
+#code {
+  width: 960px;
+  /*height: 300px;*/
+  margin: 0 auto;
+  /*font-family: 'UbuntuRegular', sans-serif !important;*/
+  font-family: 'MonacoRegular', sans-serif !important;
+}
+
+#description {
+	width: 800px;
+	color: #fff;
+	margin: 50px auto;
+	text-align: justify;
+	/*font-family: 'Hammersmith One', sans-serif;*/
+	font-family: 'Maven Pro', cursive;
+	font-size: 16px;
+}
+
+pre, code {
+  /*font-family: 'UbuntuRegular', sans-serif !important;*/
+  font-family: 'MonacoRegular', sans-serif !important;
 }
 
 h1 {
@@ -234,9 +315,6 @@ h1 {
   font-family: 'Yanone Kaffeesatz', sans-serif;
   text-align: center;
   font-size: 120px;
-}
-
-h1 a {
   color: #fff;
   text-shadow: 5px 3px 0px #4A8BA0;
   text-decoration: none;
@@ -247,7 +325,8 @@ h2 {
   /*color: #1d4168;*/
   color: #1d4168;
   /*text-shadow: #255486 3px 3px 5px;*/
-  text-shadow: 0px 1px 0px #5487bf;
+  text-shadow: 0px 1px 0px #5487bf,
+  0px -1px 0px #000000;
   /*text-shadow: 0px 2px 3px #5487bf;*/
   /*text-shadow: 0px 2px 3px #255486;*/
   font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -263,11 +342,78 @@ h2 {
   font-size: 110px;
 }
 
-header {
-  width: 960px;
-  height: 500px;
-  margin: 0 auto;
+
+/*.button {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  background: #222;
+  display: inline-block;
+  padding: 5px 10px 6px;
+  color: white;
+  text-decoration: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  position: relative;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+  font-size: 30px;
+  padding: 10px 20px;
+}*/
+
+a.button {
+  width: 250px;
+  padding: 10px 25px 10px 25px;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 30px;
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: -1px -1px 2px #465f97;
+  background: -moz-linear-gradient(#245192, #1e3b73 75%, #12295d);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #245192),color-stop(.75, #1e3b73),color-stop(1, #12295d));
+  border: 1px solid #0f2557;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer;
 }
+
+#btn-download {
+  margin: 0 0 0 300px;
+}
+
+#btn-github {
+  margin: 0 0 0 30px;
+}
+
+
+@font-face {
+    font-family: 'MonacoRegular';
+    src: url('../font/monaco-webfont.eot');
+    src: url('../font/monaco-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/monaco-webfont.woff') format('woff'),
+         url('../font/monaco-webfont.ttf') format('truetype'),
+         url('../font/monaco-webfont.svg#MonacoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UbuntuRegular';
+    src: url('../font/Ubuntu-Regular-webfont.eot');
+    src: url('../font/Ubuntu-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Ubuntu-Regular-webfont.woff') format('woff'),
+         url('../font/Ubuntu-Regular-webfont.ttf') format('truetype'),
+         url('../font/Ubuntu-Regular-webfont.svg#UbuntuRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 
 
 /* =============================================================================

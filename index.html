@@ -32,19 +32,149 @@
   <script src="js/libs/respond.min.js"></script>
   
   <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&v2' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Hammersmith+One&v2' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Maven+Pro&v2' rel='stylesheet' type='text/css'>
+  
+  
+  <!-- 
+  <script src="syntaxhighlighter/scripts/shCore.js"></script>
+  <script src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+  <link rel="stylesheet" href="syntaxhighlighter/styles/shCoreMidnight.css"/>
+  <script>SyntaxHighlighter.all();</script>
+  
+  -->
+
+	
+	
+	<script src="google-code-prettify/prettify.js"></script>
+	<link href="google-code-prettify/sunburst.css" rel="stylesheet" />
+	
+	
+	<script>
+		/*$(window).load(function () {
+	  		prettyPrint();
+		});*/
+	</script>
+	
   
 </head>
 
-<body>
+<body onload="prettyPrint();">
 
   <div id="container">
+    
     <header>
       <hgroup>
-        <h1><a href="/">jQuery <span id="bola">&#9679;</span> Boilerplate</a></h1>
-        <!-- <h1><a href="/">jQuery Boilerplate</a></h1> -->
+        <!-- <h1><a href="/">jQuery <span id="bola">&#9679;</span> Boilerplate</a></h1> -->
+        <h1>jQuery Boilerplate</h1>
         <h2>Jump-starting jQuery plugins development.</h2>
       </hgroup>
     </header>
+    
+    <article id="description">
+    	<p>Contains lots of comments to help you get going easily. It is truly object-oriented, it implements public and private methods as well as public and private properties, making it the ideal candidate for when building both simple and complex jQuery plugins.</p>
+		<p>It does not adhere to the suggestions made by the jQuery documentation regarding <a href="http://docs.jquery.com/Plugins/Authoring">Plugins/Authoring</a> and by doing so it provides better performance and memory usage by not creating multiple instances of itself and attaching them to the target DOM elements.</p>
+    </article>
+    
+    <section>
+      <a class="button" id="btn-download">Download</a>
+      <a class="button" id="btn-github">Fork it on Github</a>
+    </section>
+    
+    <article id="code">
+      <!-- <pre class="prettyprint brush: js;"> -->
+      	<pre class="prettyprint lang-js">
+    (function($) {
+
+      $.pluginName = function(element, options) {
+  
+          var defaults = {
+              foo: 'bar',
+              onFoo: function() {}
+          }
+  
+          var plugin = this;
+  
+          plugin.settings = {}
+  
+          var $element = $(element),
+               element = element;
+  
+          plugin.init = function() {
+              plugin.settings = $.extend({}, defaults, options);
+              // code goes here
+          }
+  
+          plugin.foo_public_method = function() {
+              // code goes here
+          }
+  
+          var foo_private_method = function() {
+              // code goes here
+          }
+  
+          plugin.init();
+  
+      }
+  
+      $.fn.pluginName = function(options) {
+  
+          return this.each(function() {
+              if (undefined == $(this).data('pluginName')) {
+                  var plugin = new $.pluginName(this, options);
+                  $(this).data('pluginName', plugin);
+              }
+          });
+  
+      }
+  
+  })(jQuery);
+      </pre>
+      
+      <pre class="prettyprint lang-js">
+
+        $(document).ready(function() {
+        
+            // attach the plugin to an element
+            $('#hello').pluginName({'foo': 'bar'});
+        
+            // call a public method
+            $('#hello').data('pluginName').foo_public_method();
+        
+            // get the value of a property
+            $('#hello').data('pluginName').settings.foo;
+        
+        });
+
+      </pre>
+      
+    </article>
+    
+    
+    
+    <footer>
+    	
+    	<h3>Brought to you by</h3>
+    	
+    	<hr />
+    	
+    	<div class="profile">
+	    	<a href="http://zenorocha.com"><img src="img/zeno-rocha.jpeg" alt="Photo - Zeno Rocha" /></a>
+	    	<a href="http://zenorocha.com">Zeno Rocha</a><br />
+	    	<a href="http://twitter.com/#!/zenorocha">@zenorocha</a>
+    	</div>
+    	
+    	<div class="profile">
+    		<a href="http://stefangabos.ro/"><img src="img/stefan-gabos.jpg" alt="Photo - Stefan Gabos" /></a>
+    		<a href="http://stefangabos.ro/">Stefan Gabos</a>
+    		<a href="http://twitter.com/#!/stefangabos/">@stefangabos</a>
+		</div>
+		
+    </footer>
+    
+    
+      
+    
   </div>
 
   <!-- JavaScript at the bottom for fast page loading -->
@@ -57,6 +187,9 @@
   <!-- scripts concatenated and minified via ant build script-->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
+  
+  
+  
   <!-- end scripts-->
 
 	
