@@ -11,14 +11,12 @@
        More info: h5bp.com/b/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <title>jQuery Boilerplate</title>
+  <meta name="description" content="A boilerplate for jump-starting jQuery plugins development.">
+  <meta name="author" content="Zeno Rocha">
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
   <!-- CSS: implied media="all" -->
   <link rel="stylesheet" href="css/style.css">
@@ -38,26 +36,17 @@
 	
 	<script src="google-code-prettify/prettify.js"></script>
 	<link href="google-code-prettify/sunburst.css" rel="stylesheet" />
-	
-	
-	<script>
-		/*$(window).load(function () {
-	  		prettyPrint();
-		});*/
-	</script>
-	
   
 </head>
 
-<body onload="prettyPrint();">
+<body>
 
   <div id="container">
     
     <header>
       <hgroup>
-        <!-- <h1><a href="/">jQuery <span id="bola">&#9679;</span> Boilerplate</a></h1> -->
         <h1>jQuery Boilerplate</h1>
-        <h2>Jump-starting jQuery plugins development.</h2>
+        <h2>Jump-starting jQuery plugins development</h2>
       </hgroup>
     </header>
     
@@ -67,15 +56,8 @@
     </article>
     
     <section>
-      <!-- <a class="button2" id="btn-download">Download now</a>
-      <a class="button2" id="btn-github">Fork on Github</a> -->
-      
-      <a href="http://bit.ly/djQBP" id="btn-download" class="button blue">Download now</a>
-      <a href="http://bit.ly/gitjQBP" id="btn-github" class="button blue">Fork on Github</a>
-      
-      
-      <!-- <button  id="btn-download" class="punch">Download now</button>
-      <button  id="btn-github" class="punch">Fork on Github</button> -->
+    	<a href="http://bit.ly/djQBP" id="btn-download" class="button blue">Download now</a>
+    	<a href="http://bit.ly/gitjQBP" id="btn-github" class="button blue">Fork on Github</a>
     </section>
     
     <article id="code">
@@ -190,12 +172,17 @@ $(document).ready(function() {
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
-
   <!-- scripts concatenated and minified via ant build script-->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   
-  
+  <script>
+	
+		$(document).ready(function() {
+			prettyPrint();
+		});
+		
+	</script>
   
   <!-- end scripts-->
 
