@@ -34,16 +34,6 @@
   <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&v2' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Hammersmith+One&v2' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Maven+Pro&v2' rel='stylesheet' type='text/css'>
-  
-  
-  <!-- 
-  <script src="syntaxhighlighter/scripts/shCore.js"></script>
-  <script src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
-  <link rel="stylesheet" href="syntaxhighlighter/styles/shCoreMidnight.css"/>
-  <script>SyntaxHighlighter.all();</script>
-  
-  -->
-
 	
 	
 	<script src="google-code-prettify/prettify.js"></script>
@@ -77,75 +67,85 @@
     </article>
     
     <section>
-      <a class="button" id="btn-download">Download</a>
-      <a class="button" id="btn-github">Fork it on Github</a>
+      <!-- <a class="button2" id="btn-download">Download now</a>
+      <a class="button2" id="btn-github">Fork on Github</a> -->
+      
+      <a href="http://bit.ly/djQBP" id="btn-download" class="button blue">Download now</a>
+      <a href="http://bit.ly/gitjQBP" id="btn-github" class="button blue">Fork on Github</a>
+      
+      
+      <!-- <button  id="btn-download" class="punch">Download now</button>
+      <button  id="btn-github" class="punch">Fork on Github</button> -->
     </section>
     
     <article id="code">
-      <!-- <pre class="prettyprint brush: js;"> -->
-      	<pre class="prettyprint lang-js">
-    (function($) {
-
-      $.pluginName = function(element, options) {
-  
-          var defaults = {
-              foo: 'bar',
-              onFoo: function() {}
-          }
-  
-          var plugin = this;
-  
-          plugin.settings = {}
-  
-          var $element = $(element),
-               element = element;
-  
-          plugin.init = function() {
-              plugin.settings = $.extend({}, defaults, options);
-              // code goes here
-          }
-  
-          plugin.foo_public_method = function() {
-              // code goes here
-          }
-  
-          var foo_private_method = function() {
-              // code goes here
-          }
-  
-          plugin.init();
-  
-      }
-  
-      $.fn.pluginName = function(options) {
-  
-          return this.each(function() {
-              if (undefined == $(this).data('pluginName')) {
-                  var plugin = new $.pluginName(this, options);
-                  $(this).data('pluginName', plugin);
-              }
-          });
-  
-      }
-  
-  })(jQuery);
-      </pre>
       
-      <pre class="prettyprint lang-js">
+      <h3>Usage</h3>
+      	
+		<pre class="prettyprint lang-js">
+$(document).ready(function() {
+        
+   // attach the plugin to an element
+   $('#hello').pluginName({'foo': 'bar'});
+        
+   // call a public method
+   $('#hello').data('pluginName').foo_public_method();
+        
+   // get the value of a property
+   $('#hello').data('pluginName').settings.foo;
+        
+});
+		</pre>
+		
+		<h3>jQuery Boilerplate (stripped version)</h3>
+		<!-- <span>or download it now and check the full comment version</span> -->
+      	
+      	<pre class="prettyprint lang-js">
+(function($) {
 
-        $(document).ready(function() {
-        
-            // attach the plugin to an element
-            $('#hello').pluginName({'foo': 'bar'});
-        
-            // call a public method
-            $('#hello').data('pluginName').foo_public_method();
-        
-            // get the value of a property
-            $('#hello').data('pluginName').settings.foo;
-        
-        });
-
+   $.pluginName = function(element, options) {
+  
+      var defaults = {
+         foo: 'bar',
+         onFoo: function() {}
+      }
+      
+      var plugin = this;
+  
+      plugin.settings = {}
+  
+      var $element = $(element),
+         element = element;
+  
+      plugin.init = function() {
+         plugin.settings = $.extend({}, defaults, options);
+         // code goes here
+      }
+		
+      plugin.foo_public_method = function() {
+         // code goes here
+      }
+		
+      var foo_private_method = function() {
+         // code goes here
+      }
+		
+      plugin.init();
+		
+   }
+	
+   $.fn.pluginName = function(options) {
+		
+      return this.each(function() {
+         if (undefined == $(this).data('pluginName')) {
+            var plugin = new $.pluginName(this, options);
+            $(this).data('pluginName', plugin);
+         }
+      });
+		
+   }
+  
+})(jQuery);
       </pre>
       
     </article>
@@ -172,8 +172,15 @@
 		
     </footer>
     
+    <!-- 
+    	
+    	<footer>
     
-      
+	    <p>jQuery Boilerplate is available under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.</p>
+	    
+	    <footer>
+     
+     -->
     
   </div>
 

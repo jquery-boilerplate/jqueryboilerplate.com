@@ -51,9 +51,14 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
    Links
    ========================================================================== */
 
-a { color: #4A8BA0; }
+/*a { color: #4A8BA0; }
 a:visited { color: #4A8BA0; }
-a:focus { outline: thin dotted; }
+a:focus { outline: thin dotted; }*/
+
+a {
+	color: #fff;
+	/*font-weight: bold;*/
+}
 
 /* Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: 0; }
@@ -246,15 +251,15 @@ section {
 }
 
 footer {
-	width: 960px;
+	width: 800px;
 	padding: 0 0 30px 0;
 	margin: 0 auto;
 }
 
 hr {
-	width: 960px;
+	width: 800px;
 	margin: 0 auto;
-	margin: 10px 0 5px 0;
+	margin: 10px 0 5px 1px;
 }
 
 h3 {
@@ -288,7 +293,7 @@ h3 {
 }
 
 #code {
-  width: 960px;
+  width: 800px;
   /*height: 300px;*/
   margin: 0 auto;
   /*font-family: 'UbuntuRegular', sans-serif !important;*/
@@ -364,7 +369,7 @@ h2 {
   padding: 10px 20px;
 }*/
 
-a.button {
+a.button2 {
   width: 250px;
   padding: 10px 25px 10px 25px;
   font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -375,18 +380,18 @@ a.button {
   background: -moz-linear-gradient(#245192, #1e3b73 75%, #12295d);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #245192),color-stop(.75, #1e3b73),color-stop(1, #12295d));
   border: 1px solid #0f2557;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+  border-radius: 7px;
   cursor: pointer;
 }
 
 #btn-download {
-  margin: 0 0 0 300px;
+  margin-left :300px;
 }
 
 #btn-github {
-  margin: 0 0 0 30px;
+  margin-left: 30px;
 }
 
 
@@ -412,9 +417,162 @@ a.button {
     font-style: normal;
 }
 
+/* --- Button --- */
+
+button.punch {
+  background: #4162a8;
+  border-top: 1px solid #38538c;
+  border-right: 1px solid #1f2d4d;
+  border-bottom: 1px solid #151e33;
+  border-left: 1px solid #1f2d4d;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+  -moz-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+  -ms-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+  -o-box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+  box-shadow: inset 0 1px 10px 1px #5c8bee, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+  color: #fff;
+  font: 30px 'Yanone Kaffeesatz', sans-serif;
+  line-height: 1;
+  margin-bottom: 10px;
+  padding: 10px 0 12px 0;
+  text-align: center;
+  text-shadow: 0px -1px 1px #1e2d4d;
+  width: 180px;
+  -webkit-background-clip: padding-box; }
+  button.punch:hover {
+    -webkit-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+    -moz-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+    -ms-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+    -o-box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+    box-shadow: inset 0 0px 20px 1px #87adff, 0px 1px 0 #1d2c4d, 0 6px 0px #1f3053, 0 8px 4px 1px #111111;
+    cursor: pointer; }
+  button.punch:active {
+    -webkit-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+    -moz-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+    -ms-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+    -o-box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+    box-shadow: inset 0 1px 10px 1px #5c8bee, 0 1px 0 #1d2c4d, 0 2px 0 #1f3053, 0 4px 3px 0 #111111;
+    margin-top: 58px; }
+
+body {
+  text-rendering: optimizeLegibility; }
+
+button:hover {
+  cursor: pointer; }
+
+button::-moz-focus-inner {
+  border: 0; }
+
+
+button.punch {
+  margin-top: 54px; }
+  
+  
+  
+  
+  .button {
+
+/* text */
+	text-decoration: 		none;
+	font: 36px 'Yanone Kaffeesatz', sans-serif;
+	text-shadow: 			rgba(255,255,255,.5) 0 1px 0;
+	-webkit-user-select: 	none;
+	-moz-user-select: 		none;
+	user-select: 			none;
+	
+	
+/* layout */
+	padding: 				5px .6em;
+	display: 				inline-block;
+	position: 				relative;
+	
+	-webkit-border-radius: 	8px;
+	-moz-border-radius: 	8px;
+	border-radius: 	8px;
+	
+/* effects */
+	border-top: 		1px solid rgba(255,255,255,0.8);
+	border-bottom: 		1px solid rgba(0,0,0,0.1);
+	
+	background-image: 	-webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) )), url(../img/noise.png);
+	background-image: 	-moz-radial-gradient(top, ellipse cover, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%), url(../img/noise.png);
+	background-image: 	gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) )), url(../img/noise.png);
+
+	-webkit-transition: background .2s ease-in-out;
+	-moz-transition: 	background .2s ease-in-out;
+	transition: 		background .2s ease-in-out;
+	
+/* color */
+	color: 				hsl(0, 0%, 40%) !important;
+	background-color: 	hsl(0, 0%, 75%);
+	
+	-webkit-box-shadow: inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px, /* color border */
+						rgba(0,0,0,0.2) 0 .5em 5px; /* drop shadow */
+	-moz-box-shadow: 	inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px, /* color border */
+						rgba(0,0,0,0.2) 0 .5em 5px; /* drop shadow */
+	box-shadow:		 	inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px, /* color border */
+						rgba(0,0,0,0.2) 0 .5em 5px; /* drop shadow */
+}
+
+.button:hover {
+	background-color: 	hsl(0, 0%, 83%);
+}
 
 
 
+/*.button:active {
+	background-image: 	-webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(../img/noise.png) !important;
+	background-image: 	-moz-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(../img/noise.png) !important;
+	background-image: 	gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(../img/noise.png) !important;
+
+	-webkit-box-shadow: inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, 
+							rgba(0,0,0,0.4) 0 .1em 1px,
+							rgba(0,0,0,0.2) 0 .2em 6px !important;
+	-moz-box-shadow: 	inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, 
+							rgba(0,0,0,0.4) 0 .1em 1px,
+							rgba(0,0,0,0.2) 0 .2em 6px !important;
+	box-shadow: 		inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, 
+							rgba(0,0,0,0.4) 0 .1em 1px,
+							rgba(0,0,0,0.2) 0 .2em 6px !important;
+
+	-webkit-transform: 	translateY(.2em) !important;
+	-moz-transform: 	translateY(.2em) !important;
+	transform: 			translateY(.2em) !important;
+}*/
+
+.button:focus {
+	outline: none;
+	/*text-shadow: rgba(0,0,0,0.2) 0 1px 2px;*/
+}
+  
+  
+  .button.blue {
+	color: 				hsl(208, 50%, 40%) !important;
+	background-color: 	hsl(208, 100%, 75%);
+	
+	-webkit-box-shadow: inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+							hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */
+							rgba(0,0,0,0.2) 0 .5em 5px;	/* drop shadow */
+	-moz-box-shadow: 	inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+							hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */
+							rgba(0,0,0,0.2) 0 .5em 5px;	/* drop shadow */
+	box-shadow: 		inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, /* inner shadow */ 
+							hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px, /* color border */
+							rgba(0,0,0,0.2) 0 .5em 5px;	/* drop shadow */
+}
+.button.blue:hover { 	background-color: hsl(208, 100%, 83%); }
+  
+  
+  
+  
 
 /* =============================================================================
    Non-semantic helper classes
