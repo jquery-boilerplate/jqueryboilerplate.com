@@ -224,6 +224,16 @@ body {
 	background: #395e87;
 }
 
+hr {
+	width: 785px;
+	margin: 0 auto;
+	margin: 10px 0 5px 10px;
+}
+
+pre, code {
+  font-family: 'MonacoRegular', sans-serif !important;
+}
+
 #container {
   width: 100%;
   position: absolute;
@@ -233,76 +243,6 @@ body {
   -webkit-box-shadow: inset 0px 0px 250px #000000;
   -o-box-shadow: inset 0px 0px 250px #000000;
   box-shadow: inset 0px 0px 250px #000000;
-}
-
-/* --- Structure --- */
-
-header {
-  width: 960px;
-  margin: 0 auto;
-}
-
-section {
-  width: 425px;
-  margin: 0 auto 20px;
-}
-
-footer {
-	width: 800px;
-	padding: 0 0 30px 0;
-	margin: 0 auto;
-}
-
-hr {
-	width: 785px;
-	margin: 0 auto;
-	margin: 10px 0 5px 10px;
-}
-
-.profile {
-	margin: 10px 0 40px 0;
-	width: 200px;
-	float: left;
-	text-align: left;
-}
-
-.profile img {
-	vertical-align: top;
-	float: left;
-    border: 1px solid #fff;
-}
-
-.profile a {
-	float: left;
-	text-align: left;
-	color: #fff;
-	font-family: 'Maven Pro', cursive;
-	font-size: 16px;
-	text-decoration: none;
-	margin: 0 0 0 10px;
-}
-
-#code {
-  width: 800px;
-  /*height: 300px;*/
-  margin: 0 auto;
-  /*font-family: 'UbuntuRegular', sans-serif !important;*/
-  font-family: 'MonacoRegular', sans-serif !important;
-}
-
-#description {
-	width: 800px;
-	color: #fff;
-	margin: 50px auto;
-	text-align: justify;
-	/*font-family: 'Hammersmith One', sans-serif;*/
-	font-family: 'Maven Pro', cursive;
-	font-size: 16px;
-}
-
-pre, code {
-  /*font-family: 'UbuntuRegular', sans-serif !important;*/
-  font-family: 'MonacoRegular', sans-serif !important;
 }
 
 /* =============================================================================
@@ -333,6 +273,68 @@ h3 {
 	color: #fff;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
 	font-size: 36px;
+	margin: 0 0 0 10px;
+}
+
+/* =============================================================================
+   Structure
+   ========================================================================== */
+
+#logo {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#description {
+	width: 800px;
+	color: #fff;
+	margin: 50px auto;
+	text-align: justify;
+	font-family: 'Maven Pro', cursive;
+	font-size: 16px;
+}
+
+#call2action {
+  width: 425px;
+  margin: 0 auto 20px;
+}
+
+#code {
+  width: 800px;
+  margin: 0 auto;
+  font-family: 'MonacoRegular', sans-serif !important;
+}
+
+#credits {
+	width: 800px;
+	padding: 0 0 30px 0;
+	margin: 0 auto;
+}
+
+/* =============================================================================
+   Credits
+   ========================================================================== */
+
+.profile {
+	margin: 10px 0 40px 0;
+	width: 200px;
+	float: left;
+	text-align: left;
+}
+
+.profile img {
+	vertical-align: top;
+	float: left;
+    border: 1px solid #fff;
+}
+
+.profile a {
+	float: left;
+	text-align: left;
+	color: #fff;
+	font-family: 'Maven Pro', cursive;
+	font-size: 16px;
+	text-decoration: none;
 	margin: 0 0 0 10px;
 }
   

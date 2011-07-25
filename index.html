@@ -20,22 +20,14 @@
 
   <!-- CSS: implied media="all" -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prettify.css" />
+  
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&v2' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Maven+Pro&v2' rel='stylesheet' type='text/css'>
 
   <!-- More ideas for your <head> here: h5bp.com/docs/#head-Tips -->
-
-  <!-- All JavaScript at the bottom, except for Modernizr and Respond.
-       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.0.min.js"></script>
-  <script src="js/libs/respond.min.js"></script>
-  
-  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&v2' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Hammersmith+One&v2' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Maven+Pro&v2' rel='stylesheet' type='text/css'>
-	
-	
-	<script src="google-code-prettify/prettify.js"></script>
-	<link href="google-code-prettify/sunburst.css" rel="stylesheet" />
   
 </head>
 
@@ -43,7 +35,7 @@
 
   <div id="container">
     
-    <header>
+    <header id="logo">
       <hgroup>
         <h1>jQuery Boilerplate</h1>
         <h2>Jump-starting jQuery plugins development</h2>
@@ -55,7 +47,7 @@
 		<p>It does not adhere to the suggestions made by the jQuery documentation regarding <a href="http://docs.jquery.com/Plugins/Authoring">Plugins/Authoring</a> and by doing so it provides better performance and memory usage by not creating multiple instances of itself and attaching them to the target DOM elements.</p>
     </article>
     
-    <section>
+    <section id="call2action">
     	<a href="http://bit.ly/djQBP" id="btn-download" class="button blue">Download now</a>
     	<a href="http://bit.ly/gitjQBP" id="btn-github" class="button blue">Fork on Github</a>
     </section>
@@ -132,9 +124,7 @@ $(document).ready(function() {
       
     </article>
     
-    
-    
-    <footer>
+    <footer id="credits">
     	
     	<h3>Brought to you by</h3>
     	
@@ -155,13 +145,9 @@ $(document).ready(function() {
     </footer>
     
     <!-- 
-    	
     	<footer>
-    
 	    <p>jQuery Boilerplate is available under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT license</a>.</p>
-	    
 	    <footer>
-     
      -->
     
   </div>
@@ -176,20 +162,12 @@ $(document).ready(function() {
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   
-  <script>
-	
-		$(document).ready(function() {
-			prettyPrint();
-		});
-		
-	</script>
-  
   <!-- end scripts-->
 
 	
   <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
   <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview'],['_trackPageLoadTime']];
+    var _gaq=[['_setAccount','UA-4114546-20'],['_trackPageview'],['_trackPageLoadTime']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
