@@ -24,7 +24,6 @@
     <!-- merge the pages properties -->
     <var name="page-files" value="${file.pages}, ${file.pages.default.include}"/>
 
-<!-- Test for Ant Version Delete this task and all instances of overwrite='no' if you can't upgrade to 1.8.2-->
 	<fail message="All features of the build script require Ant version 1.8.2. Please upgrade to 1.8.2 or remove all instances of 'overwrite=no' (and this fail task) from the build script to continue">
 		<condition>
 			<not>
@@ -471,8 +470,7 @@
     <!-- JAVASCRIPT -->
     <target name="-js.main.concat" depends="-js.all.minify" description="(PRIVATE) Concatenates the JS files in dir.js">
         <echo message="Concatenating Main JS scripts..."/>
-        <!-- overwrite=no here means not to overwrite if the target is newer than the sources -->
-        <concat destfile="./${dir.intermediate}/${dir.js}/scripts-concat.js" overwrite="no">
+        <concat destfile="./${dir.intermediate}/${dir.js}/scripts-concat.js">
             <fileset dir="./${dir.intermediate}/">
                 <include name="${dir.js.main}/plugins.js"/>
                 <include name="${dir.js.main}/script.js"/>
@@ -485,8 +483,7 @@
         <mkdir dir="./${dir.intermediate}/${dir.js.mylibs}"/>
 
         <echo message="Concatenating JS libraries"/>
-        <!-- overwrite=no here means not to overwrite if the target is newer than the sources -->
-        <concat destfile="./${dir.intermediate}/${dir.js}/libs-concat.js" overwrite="no">
+        <concat destfile="./${dir.intermediate}/${dir.js}/libs-concat.js">
             <fileset dir="./${dir.intermediate}/${dir.js.mylibs}/">
                 <include name="**/*.js"/>
                 <exclude name="${file.default.js.bypass}"/>
@@ -498,8 +495,7 @@
     
     <target name="-js.scripts.concat" depends="-js.main.concat,-js.mylibs.concat" if="build.concat.scripts">
         <echo message="Concatenating library file with main script file"/>
-        <!-- overwrite=no here means not to overwrite if the target is newer than the sources -->
-        <concat destfile="./${dir.intermediate}/${dir.js}/scripts-concat.min.js" overwrite="no">
+        <concat destfile="./${dir.intermediate}/${dir.js}/scripts-concat.min.js">
             <fileset dir="./${dir.intermediate}/${dir.js}/">
                 <include name="libs-concat.js"/>
                 <include name="scripts-concat.js"/>
@@ -712,8 +708,7 @@
     <target name="-css" depends="-mkdirs" description="Concatenates and Minifies any stylesheets listed in the file.stylesheets property">
         <echo message="Concatenating css..."/>
         
-        <!-- overwrite=no here means not to overwrite if the target is newer than the sources -->
-        <concat destfile="./${dir.intermediate}/${dir.css}/style-concat.css" overwrite="no">
+        <concat destfile="./${dir.intermediate}/${dir.css}/style-concat.css">
             <filelist dir="./${dir.source}/${dir.css}" files="${stylesheet-files}"/>
         </concat>
         
