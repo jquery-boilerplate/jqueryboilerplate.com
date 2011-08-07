@@ -414,6 +414,7 @@ h3 {
 
 .button:hover {
 	background-color: hsl(0, 0%, 83%);
+	text-decoration: none;
 }
 
 /*.button:active {
