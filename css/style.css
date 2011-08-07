@@ -230,6 +230,25 @@ hr {
 	margin: 10px 0 5px 10px;
 }
 
+p, a {
+	font-family: 'Maven Pro', cursive;
+	font-size: 16px;
+	color: #fff;
+}
+
+p {
+	font-weight: 400;
+}
+
+a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 pre, code {
   font-family: 'MonacoRegular', sans-serif !important;
 }
@@ -287,11 +306,8 @@ h3 {
 
 #description {
 	width: 800px;
-	color: #fff;
 	margin: 50px auto;
 	text-align: justify;
-	font-family: 'Maven Pro', cursive;
-	font-size: 16px;
 }
 
 #call2action {
@@ -325,17 +341,29 @@ h3 {
 .profile img {
 	vertical-align: top;
 	float: left;
-    border: 1px solid #fff;
+	border: 1px solid #fff;
 }
 
 .profile a {
 	float: left;
 	text-align: left;
-	color: #fff;
-	font-family: 'Maven Pro', cursive;
-	font-size: 16px;
 	text-decoration: none;
 	margin: 0 0 0 10px;
+	font-weight: 400;
+}
+
+.license {
+	float: right;
+	margin: 30px 0 0 0;
+}
+
+.license a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.license a:hover {
+	text-decoration: underline;
 }
   
 /* =============================================================================
