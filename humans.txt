@@ -9,5 +9,5 @@ Twitter:      @zenorocha
 
 /* SITE */
 
-Tech:	      HTML5, CSS3
+Tech:	      HTML5, CSS3, jQuery
 Software:     Aptana Studio 3
