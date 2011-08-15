@@ -331,10 +331,10 @@ h2 {
 }
 
 h3 {
-	color: #fff;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 36px;
-	margin: 0 0 0 10px;
+color: #fff;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: 36px;
+margin: 0 0 0 10px;
 }
 
 /* =============================================================================
@@ -353,8 +353,8 @@ h3 {
 }
 
 #call2action {
-  width: 425px;
-  margin: 0 auto 20px;
+	width: 425px;
+	margin: 0 auto 20px;
 }
 
 #code {
@@ -367,6 +367,10 @@ h3 {
 	width: 800px;
 	padding: 0 0 30px 0;
 	margin: 0 auto;
+}
+
+.explain {
+	margin: 10px;	
 }
 
 /* =============================================================================
