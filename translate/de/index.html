@@ -1,4 +1,7 @@
 <!doctype html>
+
+<!-- Translated by Sebastian Otto (@wemakeweb) on 08/19 -->
+
 <html>
 <head>
 
@@ -9,12 +12,12 @@
   <meta name="author" content="Zeno Rocha">
   <meta name="description" content="A boilerplate for jump-starting jQuery plugins development.">
 
-  <link href="css/style.css" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet">
   
   <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&v2' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,700' rel='stylesheet' type='text/css'>
 
-  <script src="js/libs/modernizr-2.0.min.js"></script>
+  <script src="../../js/libs/modernizr-2.0.min.js"></script>
   
 </head>
 
@@ -38,37 +41,40 @@
     </header>
     
     <article id="description">
-    	<p>Contains lots of comments to help you get going easily. It is truly object-oriented, it implements public and private methods as well as public and private properties, making it the ideal candidate for when building both simple and complex jQuery plugins.</p>
-	<p>It does not adhere to the suggestions made by the jQuery documentation regarding <a href="http://docs.jquery.com/Plugins/Authoring">Plugins/Authoring</a> and by doing so it provides better performance and memory usage by not creating multiple instances of itself and attaching them to the target DOM elements.</p>
+
+		<p> Beinhaltet viele Kommentare um leicht loslegen zu kรถnnen. Es ist komplett Object ortientiert und beinhaltet, public und private Methoden sowie public und private Eigenschaften, was es zum idealen Kandidaten fรผr die Entwicklung einfacher und komplexer jQuery Plugins macht </p>
+		 
+		<p> Es folgt nicht den Vorschlรคgen der jQuery Dokumentation fรผr <a href="http://docs.jquery.com/Plugins/Authoring">Plugin/Entwicklung</a> weshalb es bessere Performance und Speicherauslastung bietet weil es nicht fรผr jedes Element eine eigene Instanze des Plugins erstellt.</p>
+
     </article>
     
     <section id="call2action">
     	<a href="https://github.com/downloads/zenorocha/jquery-boilerplate/jquery-boilerplate-v2.0.zip" id="btn-download" class="button blue">Download now</a>
-    	<a href="https://github.com/zenorocha/jquery-boilerplate/" id="btn-github" class="button blue">Fork on Github</a>
+    	<a href="https://github.com/downloads/zenorocha/" id="btn-github" class="button blue">Fork on Github</a>
     </section>
     
     <article id="code">
       
-      <h3>Usage</h3>
+      <h3>Benutzung</h3>
       	
 		<pre class="prettyprint lang-js">
 
 $(document).ready(function() {
 
-   // create a new instance of the plugin
+   // erstellt eine neue Instanz des Plugins
    var myplugin = new $.pluginName($('#element'));
 
-   // call a public method
+   // ruft eine public Methode auf
    myplugin.foo_public_method();
 
-   // get the value of a public property
+   // gibt den wert einer public Eigenschaft
    myplugin.settings.property;
 
 });
 		</pre>
-		
-		<h3>jQuery Boilerplate (stripped version)</h3>
-		<p class="explain">You might want to check the <a href="https://github.com/zenorocha/jquery-boilerplate/blob/master/jquery.boilerplate.js">full commented version</a> for better understanding.</p>
+
+		<h3>jQuery Boilerplate (kompakte Version, ohne Kommentare)</h3>
+		<!-- <span>or download it now and check the full comment version</span> -->
       	
       	<pre class="prettyprint lang-js">
 
@@ -88,15 +94,15 @@ $(document).ready(function() {
       var init = function() {
          plugin.settings = $.extend({}, defaults, options);
          plugin.el = el;
-         // code goes here
+         // code hier
       }
 
       plugin.foo_public_method = function() {
-         // code goes here
+         // code hier
       }
 
       var foo_private_method = function() {
-         // code goes here
+         // code hier
       }
 
       init();
@@ -110,34 +116,34 @@ $(document).ready(function() {
     
     <footer id="credits">
     	
-    	<h3>Brought to you by</h3>
+    	<h3>Von</h3>
     	
     	<hr />
     	
     	<div class="profile">
-	    	<a href="http://zenorocha.com/"><img src="img/zeno-rocha.jpg" alt="Photo - Zeno Rocha" /></a>
+	    	<a href="http://zenorocha.com/"><img src="../../img/zeno-rocha.jpg" alt="Photo - Zeno Rocha" /></a>
 	    	<a href="http://zenorocha.com/">Zeno Rocha</a><br />
 	    	<a href="http://twitter.com/#!/zenorocha/">@zenorocha</a>
     	</div>
     	
     	<div class="profile">
-    		<a href="http://stefangabos.ro/"><img src="img/stefan-gabos.jpg" alt="Photo - Stefan Gabos" /></a>
+    		<a href="http://stefangabos.ro/"><img src="../../img/stefan-gabos.jpg" alt="Photo - Stefan Gabos" /></a>
     		<a href="http://stefangabos.ro/">Stefan Gabos</a>
     		<a href="http://twitter.com/#!/stefangabos/">@stefangabos</a>
 	</div>
 
-    	<p class="license">available under the <a href="http://www.opensource.org/licenses/mit-license.php" target="blank">MIT license</a>.</p>
-		
+    	<p class="license">verfรผgbar unter <a href="http://www.opensource.org/licenses/mit-license.php" target="blank">MIT license</a>.</p>
+
     </footer>
     
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="../../js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
-	
+  <script src="../../js/plugins.js"></script>
+  <script src="../../js/script.js"></script>
+
   <script>
     var _gaq=[['_setAccount','UA-4114546-20'],['_trackPageview'],['_trackPageLoadTime']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
