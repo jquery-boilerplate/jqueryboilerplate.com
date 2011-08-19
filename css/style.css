@@ -341,9 +341,18 @@ margin: 0 0 0 10px;
    Structure
    ========================================================================== */
 
+#languages {
+	width: 800px;
+	height: 20px;
+	margin: 10px auto;
+	font-family: 'MonacoRegular', sans-serif;
+	color: #fff;
+	text-align: center;
+}
+
 #logo {
-  width: 960px;
-  margin: 0 auto;
+	width: 960px;
+	margin: 0 auto;
 }
 
 #description {
@@ -371,6 +380,15 @@ margin: 0 0 0 10px;
 
 .explain {
 	margin: 10px;	
+}
+
+/* =============================================================================
+   Languages
+   ========================================================================== */
+
+#languages ul li {
+	list-style: none;
+	display: inline;
 }
 
 /* =============================================================================
