@@ -1,0 +1,756 @@
+/* =============================================================================
+   Prettify
+   ========================================================================== */
+
+pre .str, code .str { color: #FFFF66; } /* string  - green */
+pre .kwd, code .kwd { color: #7AE225; } /* keyword - dark pink */
+pre .com, code .com { color: #428BDD; font-style: italic; } /* comment - gray */
+pre .typ, code .typ { color: #89bdff; } /* type - light blue */
+pre .lit, code .lit { color: #3387CC; } /* literal - blue */
+pre .pun, code .pun { color: #D1EDFF; } /* punctuation - white */
+pre .pln, code .pln { color: #D1EDFF; } /* plaintext - white */
+pre .tag, code .tag { color: #89bdff; } /* html/xml tag    - light blue */
+pre .atn, code .atn { color: #bdb76b; } /* html/xml attribute name  - khaki */
+pre .atv, code .atv { color: #65B042; } /* html/xml attribute value - green */
+pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
+
+pre.prettyprint, code.prettyprint {
+	background-color: #031425;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-o-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	border-radius: 8px;
+}
+
+pre.prettyprint {
+	width: 95%;
+	margin: 1em auto;
+	padding: 1em;
+	white-space: pre-wrap;
+}
+
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums { margin-top: 0; margin-bottom: 0; color: #AEAEAE; } /* IE indents via margin-left */
+li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,li.L3,li.L5,li.L7,li.L9 { }
+
+@media print {
+  pre .str, code .str { color: #060; }
+  pre .kwd, code .kwd { color: #006; font-weight: bold; }
+  pre .com, code .com { color: #600; font-style: italic; }
+  pre .typ, code .typ { color: #404; font-weight: bold; }
+  pre .lit, code .lit { color: #044; }
+  pre .pun, code .pun { color: #440; }
+  pre .pln, code .pln { color: #000; }
+  pre .tag, code .tag { color: #006; font-weight: bold; }
+  pre .atn, code .atn { color: #404; }
+  pre .atv, code .atv { color: #060; }
+}
+
+/* =============================================================================
+   HTML5 element display
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio[controls], canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ *    http://clagnut.com/blog/348/#c790
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Remove Android and iOS tap highlight color to prevent entire container being highlighted
+ *    www.yuiblog.com/blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+ * 4. Prevent iOS text size adjust on device orientation change, without disabling user zoom
+ *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ */
+
+/*html { font-size: 100%; overflow-y: scroll; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }*/
+
+body { margin: 0; font-size: 13px; line-height: 1.231; }
+
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* 
+ * These selection declarations have to be separate
+ * No text-shadow: twitter.com/miketaylr/status/12228805301
+ * Also: hot pink!
+ */
+
+::-moz-selection { background: #fff; color: #395e87; text-shadow: none; }
+::selection { background: #fff; color: #395e87; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+/*a { color: #4A8BA0; }
+a:visited { color: #4A8BA0; }
+a:focus { outline: thin dotted; }*/
+
+a {
+	color: #fff;
+	/*font-weight: bold;*/
+}
+
+/* Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+/*
+ * 1. Improve image quality when scaled in IE7 http://h5bp.com/d
+ * 2. Remove the gap between images and borders on image containers http://h5bp.com/e 
+ */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow displayed oddly in IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* 
+ * 1. Correct color not inheriting in IE6/7/8/9 
+ * 2. Correct alignment displayed oddly in IE6/7 
+ */
+
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+/* Indicate that 'label' will shift focus to the associated form element */
+label { cursor: pointer; }
+
+/*
+ * 1. Correct font-size not inheriting in all browsers
+ * 2. Remove margins in FF3/4 S5 Chrome
+ * 3. Define consistent vertical alignment display in all browsers
+ */
+
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * 2. Correct inner spacing displayed oddly in IE6/7
+ */
+
+button, input { line-height: normal; *overflow: visible; }
+
+/*
+ * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
+ */
+
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. Display hand cursor for clickable form elements
+ * 2. Allow styling of clickable form elements in iOS
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/*
+ * Consistent box sizing and appearance
+ */
+
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+
+/* 
+ * Remove inner padding and border in FF3/4
+ * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ 
+ */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 
+ * 1. Remove default vertical scrollbar in IE6/7/8/9 
+ * 2. Allow only vertical resizing
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* Colors for form validity */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+
+/* =============================================================================
+   Primary styles
+   Author: Zeno Rocha
+   ========================================================================== */
+
+html { 
+  height:100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #395e87;
+}
+
+hr {
+	width: 785px;
+	margin: 0 auto;
+	margin: 10px 0 5px 10px;
+}
+
+p, a {
+	font-family: 'Maven Pro', cursive;
+	font-size: 16px;
+	color: #fff;
+}
+
+p {
+	font-weight: 400;
+}
+
+a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+pre, code {
+  font-family: 'MonacoRegular', sans-serif !important;
+}
+
+#container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -moz-box-shadow: inset 0px 0px 250px #000000;
+  -webkit-box-shadow: inset 0px 0px 250px #000000;
+  -o-box-shadow: inset 0px 0px 250px #000000;
+  box-shadow: inset 0px 0px 250px #000000;
+}
+
+/* =============================================================================
+   Headings
+   ========================================================================== */
+
+h1 {
+  margin: 20px 0 0 0;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  text-align: center;
+  font-size: 120px;
+  color: #fff;
+  text-shadow: 5px 3px 0px #4A8BA0;
+  text-decoration: none;
+}
+
+h2 {
+  color: #1d4168;
+  text-shadow: 0px 1px 0px #5487bf,
+  0px -1px 0px #000000;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin: 0 0 0 0;
+}
+
+h3 {
+color: #fff;
+font-family: 'Yanone Kaffeesatz', sans-serif;
+font-size: 36px;
+margin: 0 0 0 10px;
+}
+
+/* =============================================================================
+   Structure
+   ========================================================================== */
+
+#languages {
+	width: 800px;
+	height: 20px;
+	margin: 10px auto;
+	font-family: 'MonacoRegular', sans-serif;
+	color: #fff;
+	text-align: center;
+}
+
+#logo {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#description {
+	width: 800px;
+	margin: 50px auto;
+	text-align: justify;
+}
+
+#call2action {
+  margin: 50px auto;
+  text-align: justify;
+  width: 800px;
+}
+
+#call2action>iframe {
+  display:block;
+  float:right;
+  margin-bottom: 10px;
+  margin-right:10px;
+}
+
+#call2action>#github-btn {
+  width:170px;
+  height: 30px;
+  display:block;
+  float:right;
+  margin-bottom: 10px;
+}
+
+#call2action>strong {
+  width: 3em;
+  padding:1em;
+  text-transform:uppercase;
+  text-align: center;
+  margin: 0 auto;
+  
+}
+
+#call2action hr{
+  clear:both;
+  width: 785px;
+  height: 1px;
+  float: none;
+  
+}
+
+#code {
+  width: 800px;
+  margin: 50px auto;
+  font-family: 'MonacoRegular', sans-serif !important;
+}
+
+.credits {
+	width: 800px;
+	padding: 0 0 30px 0;
+	margin: 0 auto;
+}
+
+.explain {
+	margin: 10px;	
+}
+
+/* =============================================================================
+   Languages
+   ========================================================================== */
+
+#languages ul li {
+	list-style: none;
+	display: inline;
+}
+
+/* =============================================================================
+   Credits
+   ========================================================================== */
+
+.credits p {
+	margin: 10px;
+}
+
+.profile {
+	margin: 10px 0 40px 0;
+	width: 200px;
+	float: left;
+	text-align: left;
+}
+
+.profile img {
+	vertical-align: top;
+	float: left;
+	border: 1px solid #fff;
+}
+
+.profile a {
+	float: left;
+	text-align: left;
+	text-decoration: none;
+	margin: 0 0 0 10px;
+	font-weight: 400;
+}
+
+.license {
+	float: right;
+	margin: 10px 0 40px 0;
+	width: 130px;
+}
+
+.license p {
+	margin: 0;
+}
+
+.license a {
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.license a:hover {
+	text-decoration: underline;
+}
+  
+/* =============================================================================
+   BonBon's Sweet CSS3 Buttons
+   ========================================================================== */
+  
+#btn-download {
+  margin-left :0px;
+}
+
+#btn-github {
+  margin-left: 30px;
+}
+
+.button {
+	text-decoration: none;
+	font: 36px 'Yanone Kaffeesatz', sans-serif;
+	text-shadow: 	rgba(255,255,255,.5) 0 1px 0;
+	-webkit-user-select: 	none;
+	-moz-user-select: 	none;
+	user-select: none;
+	padding: 5px .6em;
+	display: inline-block;
+	position: relative;
+	-webkit-border-radius:	8px;
+	-moz-border-radius:	8px;
+	border-radius: 8px;
+	border-top: 1px solid rgba(255,255,255,0.8);
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	background-image: -webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) )), url(../img/noise.png);
+	background-image: -moz-radial-gradient(top, ellipse cover, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 100%), url(../img/noise.png);
+	background-image: gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0.7) )), url(../img/noise.png);
+	-webkit-transition: background .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out;
+	transition: background .2s ease-in-out;
+	color: hsl(0, 0%, 40%) !important;
+	background-color: hsl(0, 0%, 75%);
+	-webkit-box-shadow: inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em,
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px,
+						rgba(0,0,0,0.2) 0 .5em 5px;
+	-moz-box-shadow: 	inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em,
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px,
+						rgba(0,0,0,0.2) 0 .5em 5px;
+	box-shadow:		 	inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em,
+						hsl(0, 0%, 60%) 0 .1em 3px, hsl(0, 0%, 45%) 0 .3em 1px,
+						rgba(0,0,0,0.2) 0 .5em 5px;
+}
+
+.button:hover {
+	background-color: hsl(0, 0%, 83%);
+	text-decoration: none;
+}
+
+/*.button:active {
+	background-image: -webkit-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(../img/noise.png) !important;
+	background-image: -moz-gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(../img/noise.png) !important;
+	background-image: gradient(radial, 50% 0, 100, 50% 0, 0, from( rgba(255,255,255,0) ), to( rgba(255,255,255,0) )), url(../img/noise.png) !important;
+	-webkit-box-shadow: inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, 
+							rgba(0,0,0,0.4) 0 .1em 1px,
+							rgba(0,0,0,0.2) 0 .2em 6px !important;
+	-moz-box-shadow: 	inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, 
+							rgba(0,0,0,0.4) 0 .1em 1px,
+							rgba(0,0,0,0.2) 0 .2em 6px !important;
+	box-shadow: 		inset rgba(255,255,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.2) 0 -0.1em .3em, 
+							rgba(0,0,0,0.4) 0 .1em 1px,
+							rgba(0,0,0,0.2) 0 .2em 6px !important;
+	-webkit-transform: translateY(.2em) !important;
+	-moz-transform: translateY(.2em) !important;
+	transform: 	translateY(.2em) !important;
+}*/
+
+.button:focus {
+	outline: none;
+	/*text-shadow: rgba(0,0,0,0.2) 0 1px 2px;*/
+}
+  
+.button.blue {
+	color: hsl(208, 50%, 40%) !important;
+	background-color: hsl(208, 100%, 75%);
+	-webkit-box-shadow: inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, 
+							hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px,
+							rgba(0,0,0,0.2) 0 .5em 5px;
+	-moz-box-shadow: 	inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, 
+							hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px,
+							rgba(0,0,0,0.2) 0 .5em 5px;
+	box-shadow: 		inset rgba(255,254,255,0.6) 0 0.3em .3em, inset rgba(0,0,0,0.15) 0 -0.1em .3em, 
+							hsl(208, 50%, 55%) 0 .1em 3px, hsl(208, 50%, 40%) 0 .3em 1px,
+							rgba(0,0,0,0.2) 0 .5em 5px;
+}
+
+.button.blue:hover { 	
+	background-color: hsl(208, 100%, 83%); 
+} 
+
+/* =============================================================================
+   GitHub Buttons styles
+   ===========================================================================*/
+   .github-btn {
+  height: 20px;
+  overflow: hidden;
+}
+.gh-btn,
+.gh-count,
+.gh-ico {
+  float: left;
+}
+.gh-btn,
+.gh-count {
+  padding: 2px 5px 2px 4px;
+  color: #666;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.gh-btn {
+  background-color: #e6e6e6;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
+     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
+          box-shadow: inset 0 1px 0 rgba(255,255,255,.2);
+}
+.gh-btn:hover,
+.gh-btn:focus {
+  color: #333;
+  text-decoration: none;
+  background-position: 0 -10px;
+}
+.gh-btn:active {
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+     -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+          box-shadow: inset 0 2px 4px rgba(0,0,0,.15);
+}
+.gh-ico {
+  width: 14px;
+  height: 14px;
+  margin-right: 4px;
+  vertical-align: middle;
+  background: url(../img/github-icons.png) no-repeat 0 0;
+  opacity: .65;
+}
+.gh-btn:hover .gh-ico,
+.gh-btn:focus .gh-ico {
+  opacity: .75;
+}
+.gh-count {
+  display: none; /* hidden to start */
+  margin-left: 2px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.gh-count:hover,
+.gh-count:focus {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #d5d5d5;
+}
+.github-btn-large {
+  height: 30px;
+}
+.github-btn-large .gh-btn,
+.github-btn-large .gh-count {
+  padding: 3px 10px 3px 8px;
+  font-size: 16px;
+  line-height: 22px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+.github-btn-large .gh-ico {
+  width: 22px;
+  height: 22px;
+  background-position: 0 -20px;
+}
+.github-btn-large .gh-count {
+  margin-left: 4px;
+}
+
+
+
+/* =============================================================================
+   WebFonts
+   ========================================================================== */
+
+@font-face {
+    font-family: 'MonacoRegular';
+    src: url('../font/monaco-webfont.eot');
+    src: url('../font/monaco-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/monaco-webfont.woff') format('woff'),
+         url('../font/monaco-webfont.ttf') format('truetype'),
+         url('../font/monaco-webfont.svg#MonacoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UbuntuRegular';
+    src: url('../font/Ubuntu-Regular-webfont.eot');
+    src: url('../font/Ubuntu-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/Ubuntu-Regular-webfont.woff') format('woff'),
+         url('../font/Ubuntu-Regular-webfont.ttf') format('truetype'),
+         url('../font/Ubuntu-Regular-webfont.svg#UbuntuRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =============================================================================
+   Non-semantic helper classes
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hidden { display: none; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+
+/* =============================================================================
+   PLACEHOLDER Media Queries for Responsive Design.
+   These override the primary ('mobile first') styles
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+  /* Style adjustments for viewports 480px and over go here */
+
+}
+
+@media only screen and (min-width: 768px) {
+  /* Style adjustments for viewports 768px and over go here */
+
+}
+
+
+
+/* =============================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+ 
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+  blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}

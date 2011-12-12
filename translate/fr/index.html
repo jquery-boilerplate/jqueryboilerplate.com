@@ -1,0 +1,206 @@
+﻿<!doctype html>
+<html lang="fr">
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>jQuery Boilerplate</title>
+  <meta name="author" content="Zeno Rocha and Addy Osmani">
+  <meta name="description" content="Kit pour se lancer rapidement dans le développement de plugins jQuery.">
+
+  <link href="css/style.css" rel="stylesheet">
+  
+  <link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&v2" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet" type="text/css">
+
+  <script src="js/libs/modernizr-2.0.min.js"></script>
+  
+</head>
+
+<body>
+
+  <div id="container">
+
+	 <nav id="languages">
+		<ul>
+			<li><a href="http://de.jqueryboilerplate.com/" lang="de">Deutsch</a> •</li>
+			<li><a href="http://jqueryboilerplate.com/" lang="en">English</a> •</li>
+			<li><a href="http://fr.jqueryboilerplate.com/" lang="fr-fr">Français</a> •</li>
+			<li><a href="http://br.jqueryboilerplate.com/" lang="pt-br">Português</a></li>
+		</ul>
+	</nav>
+    
+    <header id="logo">
+      <hgroup>
+        <h1>jQuery Boilerplate</h1>
+        <h2>Starter-kit pour plugins jQuery.</h2>
+      </hgroup>
+    </header>
+    
+    <article id="description">
+
+		<p>Bien, vous avez essayé de mettre les mains dans l'écriture de plugin jQuery, et vous êtes confiant après avoir assemblé des choses qui, probablement, marchent. Excellent ! Le truc c'est que, vous vous dites qu'il dois y avoir un meilleur design pattern pour en écrire – vous en avez vus, fait de différentes manières, un peu partout, mais n'êtes pas vraiment convaincu des apports de telle ou telle méthode par rapport à une autre ou comment même, les mettre en application.</p>
+
+		<p>Ce projet n'a pas pour but de vous fournir la panacée vous permettant d'utiliser ces différents design patterns, mais tente plutôt d'en fournir un simple, autant pour les débutants que pour ceux qui ne le sont plus. En utilisant un objet simple, au constructeur basique, le tout avec un système d'options ayant des valeurs par défaut, via un constructeur protégé contre les instanciations multiples.</p>
+
+    </article>
+    
+    <section id="call2action">
+    <span id="github-btn" class="github-btn github-btn-large">
+      <a id="gh-btn" href="https://github.com/downloads/zenorocha/jquery-boilerplate/jquery-boilerplate-v3.0.zip" target="_blank" class="gh-btn">
+        <span class="gh-ico"></span>
+        <span id="gh-text" class="gh-text">Download now</span>
+      </a>
+    </span>
+    	<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=zenorocha&repo=jquery-boilerplate&type=fork&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="124px" height="30px"></iframe>
+    <hr />
+    </section>
+    <article id="code">
+      
+		<h3>Show me the code</h3>
+		
+		<pre class="prettyprint lang-js">
+/**
+ * Projet:
+ * Description:
+ * Auteur:
+ * Licence:
+ */
+
+/**
+ * Le point-virgule avant l'invocation de la fonction est un filet de sécurité
+ * si le plugin est concaténé avec d'autre scripts et/ou d'autres plugin qui
+ * pourraient ne pas avoir été convenablement fermés.
+ */
+;(function ( $, window, document, undefined ) {
+    
+    /**
+     * "undefined" est utilisé ici car sa variable globale est mutable en
+     * ECMAScript 3, c'est-à-dire qu'elle peut être redéfinie par quelqu'un
+     * d'autre. De plus, "undefined" n'est pas réélement passé à la
+     * fonction, ainsi nous sommes certains que sa valeure est bien "undefined"
+     * comme un "void 0". D'autre part en ES5, "undefined" n'est plus mutable.
+     */
+    
+    /**
+     * "window" et "document" sont passé par des variables locales plutôt que
+     * par les globales, cela accélère (relativement) le processus de résolution
+     * et permet de mieux tirer avantage de la "minification" (tout
+     * particulièrement quand les deux sont régulièrement référencés dans votre
+     * plugin).
+     */
+
+    // Créons celui par défaut
+    var pluginName = 'defaultPluginName',
+        defaults = {
+            propertyName: "value"
+        };
+
+    // Voici le constructeur du plugin
+    function Plugin( element, options ) {
+        this.element = element;
+
+        /**
+         * jQuery a une méthode "extend" qui fusionne les contenus d'au moins
+         * deux objets, sauvegardant le résultat dans le premier. Le premier
+         * objet est généralement vide, vu que nous ne souhaitons pas altérer
+         * les options par défaut des futures instances du plugin.
+         */
+        this.options = $.extend( {}, defaults, options) ;
+        
+        this._defaults = defaults;
+        this._name = pluginName;
+        
+        this.init();
+    }
+
+    Plugin.prototype.init = function () {
+      /**
+       * Mettez votre logique d'initialisation ici
+       * Vous avez déjà accès à l'élément DOM et les options via l'instance,
+       * par ex. : this.element et this.options
+       */
+    };
+
+    /**
+     * Un très léger décorateur autour du constructeur, pour en éviter de
+     * multiples instanciations.
+     */
+    $.fn[pluginName] = function ( options ) {
+        return this.each(function () {
+            if (!$.data(this, 'plugin_' + pluginName)) {
+                $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
+            }
+        });
+    }
+
+})(jQuery, window, document);
+		</pre>
+
+    </article>
+    
+    <footer class="credits">
+    	
+    	<h3>À voir aussi…</h3>  
+
+		<hr />  
+<p>Quand bien-même l'idée un starter-kit unique est intéressante, la réalité est que nous écrivons rarement des plugins d'une seule et unique manière en utilisant tout le temps le même design pattern.</p>
+<p>Ainsi, après ayant été témoin d'un grand nombre d'efforts, juste comme celui-ci, de créer un design pattern de plugin jQuery qui-fait-tout-et-bien-plus,<br /> <a href="http://addyosmani.com/">Addy Osmani</a> a instancié un <a href="https://github.com/zenorocha/jquery-plugin-patterns">dépôt de code</a> où vous pourrez trouver tout un tas d'approches différentes, allez y jeter un coup d'œil.</p>
+
+    </footer>
+
+	<footer class="credits">
+    	
+    	<h3>Créé pour vous par :</h3>
+    	
+    	<hr />
+    	
+    	<div class="profile">
+	    	<a href="http://zenorocha.com/"><img src="img/zeno-rocha.jpg" alt="Photo - Zeno Rocha" /></a>
+	    	<a href="http://zenorocha.com/">Zeno Rocha</a><br />
+	    	<a href="http://twitter.com/#!/zenorocha/">@zenorocha</a>
+    	</div>
+    	
+    	<div class="profile">
+    		<a href="http://addyosmani.com/"><img src="img/addy-osmani.jpg" alt="Photo - Addy Osmani" /></a>
+    		<a href="http://addyosmani.com/">Addy Osmani</a>
+    		<a href="http://twitter.com/#!/addyosmani/">@addyosmani</a>
+		</div>
+
+    	<div class="profile">
+    		<a href="http://ajpiano.com/"><img src="img/adam.png" alt="Photo - Adam J. Sontag" /></a>
+    		<a href="http://ajpiano.com/">Adam J. Sontag</a>
+    		<a href="http://twitter.com/#!/ajpiano/">@ajpiano</a>
+		</div>
+
+
+		<div class="license">
+	    	<p>Disponible sous <a href="http://www.opensource.org/licenses/mit-license.php" target="blank">Licence MIT</a>.</p>
+		</div>
+		
+    </footer>
+    
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+	
+  <script>
+    var _gaq=[['_setAccount','UA-4114546-20'],['_trackPageview'],['_trackPageLoadTime']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+  
+</body>
+</html>
