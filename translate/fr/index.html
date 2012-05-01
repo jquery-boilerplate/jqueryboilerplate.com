@@ -69,7 +69,7 @@
 // Le point-virgule avant l'invocation de la fonction est un filet de sécurité
 // si le plugin est concaténé avec d'autre scripts et/ou d'autres plugin qui 
 // pourraient ne pas avoir été convenablement fermés.
-;(function ( $, window, document, undefined ) {
+;(function ( $, window, undefined ) {
     
   // "undefined" est utilisé ici car sa variable globale est mutable en
   // ECMAScript 3, c'est-à-dire qu'elle peut être redéfinie par quelqu'un
@@ -84,8 +84,9 @@
 
   // Créons celui par défaut
   var pluginName = 'defaultPluginName',
+      document = window.document,
       defaults = {
-          propertyName: "value"
+        propertyName: "value"
       };
 
   // Voici le constructeur du plugin
@@ -120,7 +121,7 @@
       });
   }
 
-})(jQuery, window, document);
+}(jQuery, window));
 		</pre>
 
     </article>

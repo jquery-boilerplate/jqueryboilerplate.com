@@ -68,7 +68,7 @@
 
 // the semi-colon before function invocation is a safety net against concatenated 
 // scripts and/or other plugins which may not be closed properly.
-;(function ( $, window, document, undefined ) {
+;(function ( $, window, undefined ) {
 
   // undefined is used here as the undefined global variable in ECMAScript 3 is
   // mutable (ie. it can be changed by someone else). undefined isn't really being
@@ -81,9 +81,10 @@
 
   // Create the defaults once
   var pluginName = 'defaultPluginName',
-    defaults = {
-      propertyName: "value"
-    };
+      document = window.document,
+      defaults = {
+        propertyName: "value"
+      };
 
   // The actual plugin constructor
   function Plugin( element, options ) {
@@ -117,7 +118,7 @@
     });
   }
 
-})( jQuery, window, document );
+}(jQuery, window));
     </pre>
 
   </article>
