@@ -51,13 +51,13 @@
 
     <p>Então, quer dizer você anda escrevendo plugins jQuery e está confortável fazendo algo que provavelmente funcione. Legal! A questão é, você acha que talvez existam formas melhores de escrever aquilo - você tem visto diversas formas diferentes por aí, mas não tem certeza das diferenças entre os diversos padrões ou como começar com eles.</p>
 
-    <p>Esse projeto não busca lhe a oferecer a solução perfeita para cada tipo de padrão possível, mas tenta cobrir um template simples para iniciantes ou avançados. Usando um objeto default básico, um construtor simples para trabalhar com o elemento em si extendendo as opções default e utilizando um recurso leve para evitar problemas com múltiplas instâncias.</p>
+    <p>Esse projeto não busca lhe oferecer a solução perfeita para cada tipo de padrão possível, mas tenta cobrir um template simples para iniciantes ou avançados. Usando um objeto default básico, um construtor simples para trabalhar extendendo as opções default e utilizando um recurso leve para evitar problemas com múltiplas instâncias.</p>
 
   </article>
   
   <section id="call2action">
     <a href="https://github.com/downloads/zenorocha/jquery-boilerplate/jquery-boilerplate-v3.1.zip" id="btn-download" class="button blue">Baixe agora</a>
-    <a href="https://github.com/zenorocha/jquery-boilerplate/" id="btn-github" class="button blue">Fork on Github</a>
+    <a href="https://github.com/zenorocha/jquery-boilerplate/" id="btn-github" class="button blue">Fork no Github</a>
   </section>
   
   <article class="code">
@@ -66,34 +66,34 @@
     
     <pre class="prettyprint lang-js">
 
-// the semi-colon before function invocation is a safety net against concatenated 
-// scripts and/or other plugins which may not be closed properly.
+// o ponto-e-vírgula antes de invocar a função é uma prática segura contra scripts
+// concatenados e/ou outros plugins que não foram fechados corretamente.
 ;(function ( $, window, undefined ) {
 
-  // undefined is used here as the undefined global variable in ECMAScript 3 is
-  // mutable (ie. it can be changed by someone else). undefined isn't really being
-  // passed in so we can ensure the value of it is truly undefined. In ES5, undefined
-  // can no longer be modified.
+  // 'undefined' é usado aqui como a variável global 'undefined', no ECMAScript 3 é
+  // mutável (ou seja, pode ser alterada por alguém). 'undefined' não está sendo
+  // passado na verdade, assim podemos assegurar que o valor é realmente indefinido.
+  // No ES5, 'undefined' não pode mais ser modificado.
 
-  // window and document are passed through as local variables rather than globals
-  // as this (slightly) quickens the resolution process and can be more efficiently
-  // minified (especially when both are regularly referenced in your plugin).
+  // 'window' e 'document' são passados como variáveis locais ao invés de globais,
+  // assim aceleramos (ligeiramente) o processo de resolução e pode ser mais eficiente
+  // quando minificado (especialmente quando ambos estão referenciados corretamente).
 
-  // Create the defaults once
+  // Cria as propriedades padrão
   var pluginName = 'defaultPluginName',
       document = window.document,
       defaults = {
         propertyName: "value"
       };
 
-  // The actual plugin constructor
+  // O verdadeiro construtor do plugin
   function Plugin( element, options ) {
     this.element = element;
 
-    // jQuery has an extend method which merges the contents of two or 
-    // more objects, storing the result in the first object. The first object
-    // is generally empty as we don't want to alter the default options for
-    // future instances of the plugin
+    // jQuery tem um método 'extend' que mescla o conteúdo de dois ou
+    // mais objetos, armazenando o resultado no primeiro objeto. O primeiro
+    // objeto geralmente é vazio já que não queremos alterar os valores 
+    // padrão para futuras instâncias do plugin
     this.options = $.extend( {}, defaults, options) ;
 
     this._defaults = defaults;
@@ -103,13 +103,13 @@
   }
 
   Plugin.prototype.init = function () {
-    // Place initialization logic here
-    // You already have access to the DOM element and the options via the instance, 
-    // e.g., this.element and this.options
+    // Coloque a lógica de inicialização aqui
+    // Você já possui acesso ao elemento do DOM e as opções da instância
+    // exemplo: this.element e this.options
   };
 
-  // A really lightweight plugin wrapper around the constructor, 
-  // preventing against multiple instantiations
+  // Um invólucro realmente leve em torno do construtor,
+  // prevenindo contra criação de múltiplas instâncias
   $.fn[pluginName] = function ( options ) {
     return this.each(function () {
       if (!$.data(this, 'plugin_' + pluginName)) {
@@ -140,7 +140,7 @@ $('#elem').defaultPluginName({
 
     <hr />  
 
-    <p>Embora a ideia de criar um padrão único seja uma grande ideia em teoria, a realidade é que no desenvolvimento de plugin raramente teremos uma abordagem única que sirva para qualquer tipo de projeto sempre.</p>
+    <p>Embora a ideia de criar um padrão único seja uma grande ideia em teoria, a realidade é que no desenvolvimento de plugins raramente teremos uma abordagem única que sirva para qualquer tipo de projeto sempre.</p>
     <p>Então após ver um grande número de esforços, assim como esse, para criar um padrão único de plugins jQuery, <a href="http://addyosmani.com/">Addy Osmani</a> começou um <a href="https://github.com/zenorocha/jquery-plugin-patterns">repositório</a> onde você pode visualizar outras abordagens.</p>
 
   </footer>
