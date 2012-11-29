@@ -1,141 +1,189 @@
-<!doctype html>
-
-<!-- Translated by Sebastian Otto (@wemakeweb) on 08/19 -->
-
-<html lang="de">
+﻿<!doctype html>
+<html lang="de-DE">
 <head>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <!-- Translated by Yannick Albert (@yckart) on 10/15/2012 -->
 
   <title>jQuery Boilerplate</title>
-  <meta name="author" content="Zeno Rocha">
+
+  <meta charset="utf-8" />
+
+  <meta name="author" content="Yannick Albert">
   <meta name="description" content="A boilerplate for jump-starting jQuery plugins development.">
 
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="jQuery Boilerplate" />
+  <meta property="og:site_name" content="jQuery Boilerplate" />
+  <meta property="og:url" content="http://de.jqueryboilerplate.com" />
+  <meta property="og:image" content="http://jqueryboilerplate.com/img/fb-share.jpg" />
+  <meta property="og:description" content="A boilerplate for jump-starting jQuery plugins development." />
+
   <link href="../../css/style.css" rel="stylesheet">
-  
-  <link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&v2" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet" type="text/css">
+
+  <link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:700&v2|Maven+Pro:400,700" rel="stylesheet">
 
   <script src="../../js/libs/modernizr-2.0.min.js"></script>
-  
+
 </head>
 
 <body>
 
   <div id="container">
 
-	<nav id="languages">
-		<ul>
-			<li><a href="http://jqueryboilerplate.com/" lang="en">English</a> •</li>
-			<li><a href="http://de.jqueryboilerplate.com/" lang="de">Deutsch</a> •</li>
-			<li><a href="http://br.jqueryboilerplate.com/" lang="pt-br">Português</a></li>
-		</ul>
-	</nav>
-    
-    <header id="logo">
-      <hgroup>
-        <h1>jQuery Boilerplate</h1>
-        <h2>Jump-starting jQuery plugins development</h2>
-      </hgroup>
-    </header>
-    
-    <article id="description">
+  <nav id="languages">
+    <ul>
+      <li><a href="http://jqueryboilerplate.com/" lang="en">English</a> •</li>
+      <li><a href="http://de.jqueryboilerplate.com/" lang="de">Deutsch</a> •</li>
+      <li><a href="http://fr.jqueryboilerplate.com/" lang="fr-fr">Français</a> •</li>
+      <li><a href="http://br.jqueryboilerplate.com/" lang="pt-br">Português</a></li>
+    </ul>
+  </nav>
 
-		<p> Beinhaltet viele Kommentare um leicht loslegen zu kรถnnen. Es ist komplett Object ortientiert und beinhaltet, public und private Methoden sowie public und private Eigenschaften, was es zum idealen Kandidaten fรผr die Entwicklung einfacher und komplexer jQuery Plugins macht </p>
-		 
-		<p> Es folgt nicht den Vorschlรคgen der jQuery Dokumentation fรผr <a href="http://docs.jquery.com/Plugins/Authoring">Plugin/Entwicklung</a> weshalb es bessere Performance und Speicherauslastung bietet weil es nicht fรผr jedes Element eine eigene Instanze des Plugins erstellt.</p>
+  <header id="logo">
+    <hgroup>
+    <h1>jQuery Boilerplate</h1>
+    <h2>Jump-starting jQuery plugins development</h2>
+    </hgroup>
+  </header>
 
-    </article>
-    
-    <section id="call2action">
-    	<a href="https://github.com/downloads/zenorocha/jquery-boilerplate/jquery-boilerplate-v2.01.zip" id="btn-download" class="button blue">Download now</a>
-    	<a href="https://github.com/downloads/zenorocha/" id="btn-github" class="button blue">Fork on Github</a>
-    </section>
-    
-    <article id="code">
-      
-      <h3>Benutzung</h3>
-      	
-		<pre class="prettyprint lang-js">
+  <article id="description">
 
-$(document).ready(function() {
+    <p>Also, du hast dein Können mit dem Schreiben eines jQuery Plugins versucht und du hast komfortabel etwas zusammen geschustert, dass wahrscheinlich funktioniert. Prima! Das Ding ist, du denkst es gibt bessere Möglichkeiten diese zu schreiben - du hast viele verschiedene Vorlagen in der "Wildnis" gesehen, wie dies erledigt wurde, aber bist dir nicht wirklich sicher über die Unterschiede zu den einzelnen Ansätzen oder wie du mit diesen anfangen sollst.</p>
 
-   // erstellt eine neue Instanz des Plugins
-   var myplugin = new $.pluginName($('#element'));
+    <p>Dieses Projekt wird nicht versuchen eine perfekte Lösung für jede möglich Vorlage zu liefern, wird aber versuchen ein einfaches Template für Anfänger und Fortgeschrittene bereitzustellen. Durch die Verwendung eines Objekts für grundlegende Standardwerte, einem einfachen Konstruktor für die Zuordnung des Elementes mit dem gearbeitet werden soll und Erweiterung der Optionen mit Standardwerten und einem leichtgewichtigen Rahmen um den Konstruktor, um Probleme mit mehreren Instanzen zu vermeiden.</p>
 
-   // ruft eine public Methode auf
-   myplugin.fooPublicMethod();
+  </article>
 
-   // gibt den wert einer public Eigenschaft
-   myplugin.settings.property;
+  <section id="call2action">
+    <a href="https://github.com/downloads/zenorocha/jquery-boilerplate/jquery-boilerplate-v3.2.zip" id="btn-download" class="button blue">Herunterladen</a>
+    <a href="https://github.com/zenorocha/jquery-boilerplate/" id="btn-github" class="button blue">Fork on Github</a>
+  </section>
 
-});
-		</pre>
+  <article class="code">
 
-		<h3>jQuery Boilerplate (kompakte Version, ohne Kommentare)</h3>
-		<!-- <span>or download it now and check the full comment version</span> -->
-      	
-      	<pre class="prettyprint lang-js">
+    <h3>Zeig mir den Code</h3>
 
-;(function($) {
+    <pre class="prettyprint lang-js">
+/*
+ *  Project:
+ *  Description:
+ *  Author:
+ *  License:
+ */
 
-   $.pluginName = function(el, options) {
+// das Semikolon vor dem Funktions-Aufruf ist ein Sicherheitsnetz für verkettete
+// Scripte und/oder andere Plugins die möglicherweise nicht ordnungsgemäß geschlossen wurden.
+;(function ( $, window, document, undefined ) {
 
-      var defaults = {
-         propertyName: 'value',
-         onSomeEvent: function() {}
-      }
+    // undefined wird hier als die in ECMAScript 3 veränderbare globale Variable
+    // `undefined` benutzt (d.h. sie kann von einem anderen benutzt und geändert werden).
+    // undefined wird nicht wirklich an die Funktion übergegen, sondern stellt nur sicher,
+    // dass undefined nicht von einem anderen Script überschrieben wurde.
+    // In ES5 kann undefined nicht längern modifiziert werden.
 
-      var plugin = this;
+    // window und document werden als lokale anstatt als globale Variablen übergeben
+    // da dies den Auflösungsprozess (leicht) beschleunigt und kann effizienter
+    // minifiziert werden (vor allem, wenn beide in dem Plugin referenziert sind).
 
-      plugin.settings = {}
+    // Erstellt einmalig die Standardeinstellungen
+    var pluginName = "defaultPluginName",
+        defaults = {
+            propertyName: "value"
+        };
 
-      var init = function() {
-         plugin.settings = $.extend({}, defaults, options);
-         plugin.el = el;
-         // code hier
-      }
+    // Der aktuelle Plugin-Konstruktor
+    function Plugin( element, options ) {
+        this.element = element;
 
-      plugin.fooPublicMethod = function() {
-         // code hier
-      }
+        // jQuery hat eine extend-Methode welche die Inhalte von zwei oder
+        // mehr Objekten zusammenführt und das Ergebnis in das erste Objekt speichert.
+        // Das erste Objekt ist in der Regel leer, da wir die Standardoptionen nicht
+        // für zukünftige Instanzen des Plugins ändern möchten
+        this.options = $.extend( {}, defaults, options );
 
-      var fooPrivateMethod = function() {
-         // code hier
-      }
+        this._defaults = defaults;
+        this._name = pluginName;
 
-      init();
+        this.init();
+    }
 
-   }
+    Plugin.prototype = {
 
-})(jQuery);
-      </pre>
-      
-    </article>
-    
-    <footer id="credits">
-    	
-    	<h3>Von</h3>
-    	
-    	<hr />
-    	
-    	<div class="profile">
-	    	<a href="http://zenorocha.com/"><img src="../../img/zeno-rocha.jpg" alt="Photo - Zeno Rocha" /></a>
-	    	<a href="http://zenorocha.com/">Zeno Rocha</a><br />
-	    	<a href="http://twitter.com/#!/zenorocha/">@zenorocha</a>
-    	</div>
-    	
-    	<div class="profile">
-    		<a href="http://stefangabos.ro/"><img src="../../img/stefan-gabos.jpg" alt="Photo - Stefan Gabos" /></a>
-    		<a href="http://stefangabos.ro/">Stefan Gabos</a>
-    		<a href="http://twitter.com/#!/stefangabos/">@stefangabos</a>
-	</div>
+        init: function() {
+            // Initialisierungslogik hier platzieren
+            // Die hast bereits Zugriff auf das DOM-Element und
+            // die Optionen über die Instanz, z.B. this.element
+            // und this.options
+            // du kannst weitere funktionen hinzufügen, so wie die untere und
+            // rufst sie wie folgt auf: this.yourOtherFunction(this.element, this.options).
+        },
 
-    	<p class="license">verfรผgbar unter <a href="http://www.opensource.org/licenses/mit-license.php" target="blank">MIT license</a>.</p>
+        yourOtherFunction: function(el, options) {
+            // eine gewisse Logik
+        }
+    };
 
-    </footer>
-    
+    // Ein sehr leichtgewichtiger Plugin-Rahmen um den Konstruktor,
+    // verhindert mehrere Instanziierungen pro Element
+    $.fn[pluginName] = function ( options ) {
+        return this.each(function () {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" + pluginName, new Plugin( this, options ));
+            }
+        });
+    };
+
+})( jQuery, window, document );</pre>
+
+  </article>
+
+  <article class="code">
+
+    <h3>Benutzung</h3>
+
+    <pre class="prettyprint lang-js">
+$('#elem').defaultPluginName({
+  propertyName: 'a custom value'
+});</pre>
+
+  </article>
+
+  <footer class="credits">
+
+    <h3>Siehe auch</h3>
+
+    <hr />
+
+    <p>Während die Idee, eine einzigartige Boilerplate in der Theorie eine gute Idee ist, sieht die Realität etwas anders aus. Bei der Plugin-Entwicklung nutzen wir selten eine einzige Vorlage für jedes Projekt und jeden Anwendungsfall.</p>
+    <p>Nach dem ent-/ aufdecken vieler Schwierigkeiten bei dem Entwickeln eines jQuery Plugin Patterns für eine "Eine-Für-Alles"-Lösung, hat <a href="http://addyosmani.com/">Addy Osmani</a> ein <a href="https://github.com/zenorocha/jquery-plugin-patterns">repository</a> angelegt wo du viele verschiedene Lösungsansätze finden kannst, schau es dir an.</p>
+
+  </footer>
+
+  <footer class="credits">
+
+    <h3>Bereitgestellt für dich von</h3>
+
+    <hr />
+
+    <div class="profile">
+      <a href="http://zenorocha.com/"><img src="../../img/zeno-rocha.jpg" alt="Photo - Zeno Rocha" /></a>
+      <a href="http://zenorocha.com/">Zeno Rocha</a><br />
+      <a href="http://twitter.com/#!/zenorocha/">@zenorocha</a>
+    </div>
+
+    <div class="profile">
+      <a href="http://addyosmani.com/"><img src="../../img/addy-osmani.jpg" alt="Photo - Addy Osmani" /></a>
+      <a href="http://addyosmani.com/">Addy Osmani</a>
+      <a href="http://twitter.com/#!/addyosmani/">@addyosmani</a>
+    </div>
+
+
+    <div class="license">
+      <p>verfügbar unter der <a href="http://www.opensource.org/licenses/mit-license.php" target="blank">MIT Lizenz</a>.</p>
+    </div>
+
+  </footer>
+
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -145,16 +193,16 @@ $(document).ready(function() {
   <script src="../../js/script.js"></script>
 
   <script>
-    var _gaq=[['_setAccount','UA-4114546-24'],['_trackPageview'],['_trackPageLoadTime']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+  var _gaq=[['_setAccount','UA-4114546-23'],['_trackPageview'],['_trackPageLoadTime']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
   </script>
 
   <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+  <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
   <![endif]-->
-  
+
 </body>
 </html>
