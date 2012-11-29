@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 
-  <!-- Translated by Zeno Rocha (@zenorocha) on 04/29/2012 -->  
+  <!-- Translated by Zeno Rocha (@zenorocha) on 04/29/2012 -->
 
   <title>jQuery Boilerplate</title>
 
@@ -24,29 +24,28 @@
   <link href="http://fonts.googleapis.com/css?family=Maven+Pro:400,700" rel="stylesheet">
 
   <script src="../../js/libs/modernizr-2.0.min.js"></script>
-  
+
 </head>
 
 <body>
 
   <div id="container">
-
   <nav id="languages">
     <ul>
       <li><a href="http://jqueryboilerplate.com/" lang="en">English</a> •</li>
-    <li><a href="http://fr.jqueryboilerplate.com/" lang="fr-fr">Français</a> •</li>
-      <!-- <li><a href="http://de.jqueryboilerplate.com/" lang="de">Deutsch</a> •</li>-->
+      <li><a href="http://de.jqueryboilerplate.com/" lang="de">Deutsch</a> •</li>
+      <li><a href="http://fr.jqueryboilerplate.com/" lang="fr-fr">Français</a> •</li>
       <li><a href="http://br.jqueryboilerplate.com/" lang="pt-br">Português</a></li>
     </ul>
   </nav>
-  
+
   <header id="logo">
     <hgroup>
     <h1>jQuery Boilerplate</h1>
     <h2>Jump-starting jQuery plugins development</h2>
     </hgroup>
   </header>
-  
+
   <article id="description">
 
     <p>Então, quer dizer você anda escrevendo plugins jQuery e está confortável fazendo algo que provavelmente funcione. Legal! A questão é, você acha que talvez existam formas melhores de escrever aquilo - você tem visto diversas formas diferentes por aí, mas não tem certeza das diferenças entre os diversos padrões ou como começar com eles.</p>
@@ -54,91 +53,104 @@
     <p>Esse projeto não busca lhe oferecer a solução perfeita para cada tipo de padrão possível, mas tenta cobrir um template simples para iniciantes ou avançados. Usando um objeto default básico, um construtor simples para trabalhar extendendo as opções default e utilizando um recurso leve para evitar problemas com múltiplas instâncias.</p>
 
   </article>
-  
+
   <section id="call2action">
-    <a href="https://github.com/downloads/zenorocha/jquery-boilerplate/jquery-boilerplate-v3.1.zip" id="btn-download" class="button blue">Baixe agora</a>
+    <a href="https://github.com/downloads/zenorocha/jquery-boilerplate/jquery-boilerplate-v3.2.zip" id="btn-download" class="button blue">Baixe agora</a>
     <a href="https://github.com/zenorocha/jquery-boilerplate/" id="btn-github" class="button blue">Fork no Github</a>
   </section>
-  
+
   <article class="code">
-    
+
     <h3>Me mostre o código</h3>
-    
+
     <pre class="prettyprint lang-js">
+
+/*
+ *  Project:
+ *  Description:
+ *  Author:
+ *  License:
+ */
 
 // o ponto-e-vírgula antes de invocar a função é uma prática segura contra scripts
 // concatenados e/ou outros plugins que não foram fechados corretamente.
-;(function ( $, window, undefined ) {
+;(function ( $, window, document, undefined ) {
 
-  // 'undefined' é usado aqui como a variável global 'undefined', no ECMAScript 3 é
-  // mutável (ou seja, pode ser alterada por alguém). 'undefined' não está sendo
-  // passado na verdade, assim podemos assegurar que o valor é realmente indefinido.
-  // No ES5, 'undefined' não pode mais ser modificado.
+    // 'undefined' é usado aqui como a variável global 'undefined', no ECMAScript 3 é
+    // mutável (ou seja, pode ser alterada por alguém). 'undefined' não está sendo
+    // passado na verdade, assim podemos assegurar que o valor é realmente indefinido.
+    // No ES5, 'undefined' não pode mais ser modificado.
 
-  // 'window' e 'document' são passados como variáveis locais ao invés de globais,
-  // assim aceleramos (ligeiramente) o processo de resolução e pode ser mais eficiente
-  // quando minificado (especialmente quando ambos estão referenciados corretamente).
+    // 'window' e 'document' são passados como variáveis locais ao invés de globais,
+    // assim aceleramos (ligeiramente) o processo de resolução e pode ser mais eficiente
+    // quando minificado (especialmente quando ambos estão referenciados corretamente).
 
-  // Cria as propriedades padrão
-  var pluginName = 'defaultPluginName',
-      document = window.document,
-      defaults = {
-        propertyName: "value"
-      };
+    // Cria as propriedades padrão
+    var pluginName = "defaultPluginName",
+        defaults = {
+            propertyName: "value"
+        };
 
-  // O verdadeiro construtor do plugin
-  function Plugin( element, options ) {
-    this.element = element;
+    // O verdadeiro construtor do plugin
+    function Plugin( element, options ) {
+        this.element = element;
 
-    // jQuery tem um método 'extend' que mescla o conteúdo de dois ou
-    // mais objetos, armazenando o resultado no primeiro objeto. O primeiro
-    // objeto geralmente é vazio já que não queremos alterar os valores 
-    // padrão para futuras instâncias do plugin
-    this.options = $.extend( {}, defaults, options) ;
+        // jQuery tem um método 'extend' que mescla o conteúdo de dois ou
+        // mais objetos, armazenando o resultado no primeiro objeto. O primeiro
+        // objeto geralmente é vazio já que não queremos alterar os valores
+        // padrão para futuras instâncias do plugin
+        this.options = $.extend( {}, defaults, options );
 
-    this._defaults = defaults;
-    this._name = pluginName;
+        this._defaults = defaults;
+        this._name = pluginName;
 
-    this.init();
-  }
+        this.init();
+    }
 
-  Plugin.prototype.init = function () {
-    // Coloque a lógica de inicialização aqui
-    // Você já possui acesso ao elemento do DOM e as opções da instância
-    // exemplo: this.element e this.options
-  };
+    Plugin.prototype = {
 
-  // Um invólucro realmente leve em torno do construtor,
-  // prevenindo contra criação de múltiplas instâncias
-  $.fn[pluginName] = function ( options ) {
-    return this.each(function () {
-      if (!$.data(this, 'plugin_' + pluginName)) {
-        $.data(this, 'plugin_' + pluginName, new Plugin( this, options ));
-      }
-    });
-  }
+        init: function() {
+            // Coloque a lógica de inicialização aqui
+            // Você já possui acesso ao elemento do DOM e as opções da instância
+            // exemplo: this.element e this.options
+        },
 
-}(jQuery, window));
+        yourOtherFunction: function(el, options) {
+            // some logic
+        }
+    };
+
+    // Um invólucro realmente leve em torno do construtor,
+    // prevenindo contra criação de múltiplas instâncias
+    $.fn[pluginName] = function ( options ) {
+        return this.each(function () {
+            if (!$.data(this, "plugin_" + pluginName)) {
+                $.data(this, "plugin_" + pluginName, new Plugin( this, options ));
+            }
+        });
+    };
+
+})( jQuery, window, document );
     </pre>
 
   </article>
 
   <article class="code">
-    
+
     <h3>Modo de uso</h3>
-    
+
     <pre class="prettyprint lang-js">
 $('#elem').defaultPluginName({
   propertyName: 'a custom value'
 });</pre>
 
   </article>
-  
-  <footer class="credits">
-    
-    <h3>Veja também</h3>  
 
-    <hr />  
+  <footer class="credits">
+
+    <h3>Veja também</h3>
+
+    <hr />
 
     <p>Embora a ideia de criar um padrão único seja uma grande ideia em teoria, a realidade é que no desenvolvimento de plugins raramente teremos uma abordagem única que sirva para qualquer tipo de projeto sempre.</p>
     <p>Então após ver um grande número de esforços, assim como esse, para criar um padrão único de plugins jQuery, <a href="http://addyosmani.com/">Addy Osmani</a> começou um <a href="https://github.com/zenorocha/jquery-plugin-patterns">repositório</a> onde você pode visualizar outras abordagens.</p>
@@ -146,36 +158,30 @@ $('#elem').defaultPluginName({
   </footer>
 
   <footer class="credits">
-    
+
     <h3>Apresentado por</h3>
-    
+
     <hr />
-    
+
     <div class="profile">
       <a href="http://zenorocha.com/"><img src="../../img/zeno-rocha.jpg" alt="Photo - Zeno Rocha" /></a>
       <a href="http://zenorocha.com/">Zeno Rocha</a><br />
       <a href="http://twitter.com/#!/zenorocha/">@zenorocha</a>
     </div>
-    
+
     <div class="profile">
       <a href="http://addyosmani.com/"><img src="../../img/addy-osmani.jpg" alt="Photo - Addy Osmani" /></a>
       <a href="http://addyosmani.com/">Addy Osmani</a>
       <a href="http://twitter.com/#!/addyosmani/">@addyosmani</a>
     </div>
 
-    <div class="profile">
-      <a href="http://ajpiano.com/"><img src="../../img/adam.png" alt="Photo - Adam J. Sontag" /></a>
-      <a href="http://ajpiano.com/">Adam J. Sontag</a>
-      <a href="http://twitter.com/#!/ajpiano/">@ajpiano</a>
-    </div>
-
 
     <div class="license">
       <p>disponível a partir da <a href="http://www.opensource.org/licenses/mit-license.php" target="blank">licença MIT</a>.</p>
     </div>
-    
+
   </footer>
-  
+
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -183,7 +189,7 @@ $('#elem').defaultPluginName({
 
   <script src="../../js/plugins.js"></script>
   <script src="../../js/script.js"></script>
-  
+
   <script>
   var _gaq=[['_setAccount','UA-4114546-23'],['_trackPageview'],['_trackPageLoadTime']];
   (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
@@ -195,6 +201,6 @@ $('#elem').defaultPluginName({
   <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
   <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
   <![endif]-->
-  
+
 </body>
 </html>
