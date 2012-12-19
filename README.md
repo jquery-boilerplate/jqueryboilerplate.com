@@ -1,4 +1,4 @@
-# [jQuery Boilerplate](https://github.com/zenorocha/jquery-boilerplate/) - Website
+# [jQuery Boilerplate](https://github.com/jquery-boilerplate/boilerplate/) - Website
 
 ## Translate
 We want to bring this project for anybody, not just for those who speak english.
