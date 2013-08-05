@@ -116,9 +116,14 @@ header h2 {
 
 .row {
 	margin-left: -30px;
-	height: 350px;
+	height: 400px;
 }
 
+@media (min-width: 1200px) {
+	.row {
+		height: 350px;
+	}
+}
 /* Box
 	 ========================================================================== */
 
