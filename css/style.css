@@ -52,18 +52,19 @@ img {
 .container {
 	margin: 0 auto;
 	width: 970px;
+}
+
+#main {
 	min-height: 100%;
-  /* equal to footer height */
   margin-bottom: -100px;
 }
 
-.container:after {
+#main:after {
   content: "";
   display: block;
 }
 
-footer, .container:after {
-  /* .push must be the same height as footer */
+footer, #main:after {
   height: 100px;
 }
 
@@ -76,7 +77,7 @@ footer, .container:after {
 	 ========================================================================== */
 
 header {
-	margin: 60px 0 70px;
+	padding: 60px 0 70px;
 }
 
 header h1 {
@@ -201,7 +202,6 @@ header h2 {
 
 footer {
 	background: #ebedef;
-	bottom: 0;
 	color: #b8bfc7;
 	width: 100%;
 }
