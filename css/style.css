@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+
 body {
 	background: #fefefe;
 	color: #34495e;
@@ -45,6 +52,19 @@ img {
 .container {
 	margin: 0 auto;
 	width: 970px;
+	min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -100px;
+}
+
+.container:after {
+  content: "";
+  display: block;
+}
+
+footer, .container:after {
+  /* .push must be the same height as footer */
+  height: 100px;
 }
 
 .span3 {
@@ -177,9 +197,7 @@ footer {
 	background: #ebedef;
 	bottom: 0;
 	color: #b8bfc7;
-	position: absolute;
 	width: 100%;
-	height: 100px;
 }
 
 footer p {
