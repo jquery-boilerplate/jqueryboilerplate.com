@@ -8,7 +8,7 @@ html, body {
 body {
 	background: #fefefe;
 	color: #34495e;
-	font-family: "proxima-nova-1", "proxima-nova-2", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 	font-size: 14px;
 	line-height: 1.231;
 	text-rendering: optimizelegibility;
@@ -82,7 +82,7 @@ header {
 
 header h1 {
 	color: #1da9cc;
-	font-family: "freight-sans-pro-1","freight-sans-pro-2";
+	font-family: "freight-sans-pro", sans-serif;
 	font-style: normal;
 	font-weight: 700;
 	line-height: 1.1;
@@ -92,7 +92,7 @@ header h1 {
 }
 
 header h2 {
-	font-family: "freight-sans-pro-1","freight-sans-pro-2";
+	font-family: "freight-sans-pro", sans-serif;
 	font-style: normal;
 	font-weight: 400;
 	margin-bottom: 4px;
